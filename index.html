@@ -35,12 +35,12 @@
             background: var(--hover-color); margin: 15px auto 0;
         }
 
-        /* --- TLAČÍTKO (UPRAVENO - PLNÁ MODRÁ BARVA) --- */
+        /* --- TLAČÍTKO --- */
         .btn {
             display: inline-block; 
             padding: 12px 35px; 
-            background: var(--primary-color); /* Plná modrá barva */
-            color: var(--white);              /* Bílý text */
+            background: var(--primary-color); 
+            color: var(--white);              
             border: 2px solid var(--primary-color);
             border-radius: 4px; 
             font-weight: 600; 
@@ -51,7 +51,7 @@
         }
         
         .btn:hover { 
-            background: var(--hover-color); /* Při najetí zesvětlá */
+            background: var(--hover-color); 
             border-color: var(--hover-color);
             color: var(--white); 
         }
@@ -91,16 +91,13 @@
 
         .hero-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 30, 60, 0.5); 
+            background: rgba(0, 30, 60, 0.6); /* Mírně tmavší pro čitelnost */
             display: flex; align-items: center;
         }
         .hero-content { color: var(--white); text-align: left; width: 100%; z-index: 1; }
         .hero h1 { font-size: 4rem; margin-bottom: 25px; font-weight: 800; line-height: 1.2; }
-        .hero p { font-size: 1.3rem; margin-bottom: 40px; max-width: 600px; }
+        .hero p { font-size: 1.3rem; margin-bottom: 40px; max-width: 700px; }
         
-        /* Zde jsem odstranil specifický styl pro tlačítko v hero sekci, 
-           aby se použil ten hlavní modrý styl definovaný výše */
-
         /* --- PRUH SE STATISTIKAMI --- */
         .counter-bar {
             background-color: var(--primary-color);
@@ -116,7 +113,7 @@
         .counter-item p { font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; opacity: 0.9; }
 
         /* --- OSTATNÍ SEKCE --- */
-        .about-grid { display: block; text-align: center; max-width: 800px; margin: 0 auto; }
+        .about-grid { display: block; text-align: center; max-width: 900px; margin: 0 auto; }
         .about-text p { margin-bottom: 20px; font-size: 1.1rem; }
         
         .bg-light { background: var(--secondary-color); }
@@ -127,9 +124,9 @@
         
         /* Styl pro sekci Technologie */
         .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-        .tech-item { text-align: center; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
+        .tech-item { text-align: center; padding: 20px; border: 1px solid #eee; border-radius: 8px; background: #fff; }
         .tech-item i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
-        .tech-item h4 { font-size: 1.2rem; margin-bottom: 10px; }
+        .tech-item h4 { font-size: 1.2rem; margin-bottom: 10px; font-weight: 700; color: var(--primary-color); }
 
         .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
         .info-item { display: flex; align-items: center; margin-bottom: 30px; }
@@ -181,8 +178,8 @@
 
         <div class="hero-overlay">
             <div class="container hero-content">
-                <h1>Knihy, jak mají být</h1>
-                <p>Jen tištěná kniha je knihou, jak má být. Pro naše zákazníky vyrábíme knihy všech druhů vazeb.</p>
+                <h1>Výroba knih v ekologické generaci</h1>
+                <p>Jsme moderní tiskárna s revoluční technologií LED UV. Jako první ve střední a východní Evropě nabízíme tisk v té nejvyšší kvalitě s důrazem na ekologii.</p>
                 <a href="#contact" class="btn">Poptávka</a>
             </div>
         </div>
@@ -192,24 +189,24 @@
         <div class="container">
             <div class="counter-grid">
                 <div class="counter-item">
-                    <i class="fas fa-book"></i>
-                    <h3>50 Milionů+</h3>
-                    <p>Celkem vyrobených knih</p>
+                    <i class="fas fa-industry"></i>
+                    <h3>16 000 m²</h3>
+                    <p>Výrobní plochy</p>
                 </div>
                 <div class="counter-item">
                     <i class="fas fa-print"></i>
-                    <h3>2 Miliony+</h3>
+                    <h3>Miliony</h3>
                     <p>Knih vyrobených ročně</p>
                 </div>
                 <div class="counter-item">
-                    <i class="fas fa-users"></i>
-                    <h3>1,500+</h3>
-                    <p>Spokojených klientů</p>
+                    <i class="fas fa-certificate"></i>
+                    <h3>LED UV</h3>
+                    <p>První v ČR a SR</p>
                 </div>
                 <div class="counter-item">
                     <i class="fas fa-calendar-alt"></i>
-                    <h3>30+ Let</h3>
-                    <p>Tradice na trhu</p>
+                    <h3>25+ Let</h3>
+                    <p>Tradice na trhu (od 2001)</p>
                 </div>
             </div>
         </div>
@@ -222,17 +219,17 @@
                 <div class="service-card">
                     <i class="fas fa-laptop-code icon"></i>
                     <h3>Předtisková příprava</h3>
-                    <p>Kontrola dat, osvit desek a příprava pro bezchybný tisk.</p>
+                    <p>Kompletní DTP studio, kontrola tiskových dat a osvit desek CTP pro bezchybný výsledek.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-print icon"></i>
                     <h3>Ofsetový tisk</h3>
-                    <p>Kvalitní plnobarevný i černobílý tisk na moderních strojích.</p>
+                    <p>Tisk na strojích Heidelberg. Specializujeme se na LED UV tisk, který okamžitě schne a umožňuje tisk na širokou škálu materiálů.</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-book-open icon"></i>
-                    <h3>Knihařské zpracování</h3>
-                    <p>Vazby V1, V2, V4, V8 a kompletní dokončovací práce.</p>
+                    <h3>Dokončující zpracování</h3>
+                    <p>Vazby V1, V2, V4, V8 na vlastních linkách. Nabízíme zušlechťování, laminaci a logistiku.</p>
                 </div>
             </div>
         </div>
@@ -243,23 +240,23 @@
             <h2 class="section-title">Technologie</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>Disponujeme špičkovým strojovým vybavením, které nám umožňuje realizovat i ty nejnáročnější zakázky v nejvyšší kvalitě a krátkých termínech.</p>
+                    <p>Disponujeme jedním z nejmodernějších strojových parků v Evropě. Naše pýcha je technologie LED UV tisku, kterou jsme instalovali jako první v regionu.</p>
                 </div>
                 <div class="tech-grid">
                     <div class="tech-item">
                         <i class="fas fa-cogs"></i>
-                        <h4>Heidelberg Speedmaster</h4>
-                        <p>Špičkový ofsetový tisk</p>
+                        <h4>Heidelberg XL 106-8 LED UV</h4>
+                        <p>Vlajková loď naší tiskárny pro špičkový ekologický tisk.</p>
                     </div>
                     <div class="tech-item">
-                        <i class="fas fa-cut"></i>
-                        <h4>Řezací centra</h4>
-                        <p>Přesné formátování papíru</p>
+                        <i class="fas fa-book"></i>
+                        <h4>Linka Kolbus BF 513</h4>
+                        <p>Profesionální linka pro výrobu tuhé vazby V8.</p>
                     </div>
                     <div class="tech-item">
                         <i class="fas fa-layer-group"></i>
-                        <h4>Linky pro vazbu V2/V8</h4>
-                        <p>Kompletní knihařské zpracování</p>
+                        <h4>Aster Evo</h4>
+                        <p>Automat pro niťové šití knižních bloků.</p>
                     </div>
                 </div>
             </div>
@@ -268,11 +265,11 @@
 
     <section id="about" class="section-padding bg-light">
         <div class="container">
-            <h2 class="section-title">O nás</h2>
+            <h2 class="section-title">O společnosti</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>Více než třicet let jsme stabilním partnerem velkých, středních i malých nakladatelů knih na českém trhu. Dejte nám data a my vyrobíme knihu podle vašich představ a za férovou cenu.</p>
-                    <p>Jsme firma s dlouhou tradicí, rodinným prostředím a českým vlastníkem. Moderní technologie a řemeslnou zručnost našich lidí dáváme do služeb nakladatelům.</p>
+                    <p>Společnost TISK CENTRUM s.r.o. působí na trhu polygrafie již od roku 2001. Za tu dobu jsme se vypracovali mezi přední tiskárny v České republice.</p>
+                    <p>V roce 2021 jsme rozšířili náš výrobní areál v Moravanech u Brna na 16 000 m². Sázíme na ekologii a inovace – proto jsme jako první ve střední a východní Evropě instalovali technologii Heidelberg LED UV.</p>
                 </div>
             </div>
         </div>
@@ -285,15 +282,18 @@
                 <div class="contact-info">
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>Průmyslová 123, 100 00 Praha</p>
+                        <div>
+                            <strong>Výroba a sídlo:</strong>
+                            <p>Modřická 645/62<br>664 48 Moravany u Brna</p>
+                        </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
-                        <p>+420 123 456 789</p>
+                        <p>+420 545 243 565</p>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
-                        <p>info@mojetiskarna.cz</p>
+                        <p>info@tiskcentrum.cz</p>
                     </div>
                 </div>
                 <form class="contact-form">
@@ -308,7 +308,7 @@
 
     <footer>
         <div class="container footer-content">
-            <p>&copy; 2026 TISKCENTRUM s.r.o. | Všechna práva vyhrazena.</p>
+            <p>&copy; 2026 TISK CENTRUM s.r.o. | Všechna práva vyhrazena.</p>
         </div>
     </footer>
 
