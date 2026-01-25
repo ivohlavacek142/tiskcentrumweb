@@ -43,9 +43,11 @@
         }
         .btn:hover { background: var(--primary-color); color: var(--white); }
 
-        /* --- HLAVIČKA --- */
+        /* --- HLAVIČKA (Upravená výška) --- */
         header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .header-content { display: flex; justify-content: space-between; align-items: center; height: 90px; }
+        
+        /* ZDE BYLA ZMĚNA - výška snížena z 90px na 70px */
+        .header-content { display: flex; justify-content: space-between; align-items: center; height: 70px; }
         
         .logo { 
             font-size: 1.8rem; /* Základní velikost pro PC */
@@ -159,7 +161,9 @@
             /* ZMENŠENÍ LOGA PRO MOBILY */
             .logo { font-size: 1.3rem; }
 
-            .nav-links { display: none; position: absolute; top: 90px; right: 0; width: 100%; background: #fff; flex-direction: column; text-align: center; padding: 20px 0; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+            /* Posunutí mobilního menu o něco výše, aby odpovídalo nové výšce hlavičky (70px) */
+            .nav-links { display: none; position: absolute; top: 70px; right: 0; width: 100%; background: #fff; flex-direction: column; text-align: center; padding: 20px 0; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+            
             .hamburger { display: block; font-size: 1.8rem; cursor: pointer; color: var(--primary-color); }
             #menu-toggle:checked ~ .nav-links { display: flex; }
             .contact-wrapper { grid-template-columns: 1fr; }
