@@ -43,14 +43,13 @@
         }
         .btn:hover { background: var(--primary-color); color: var(--white); }
 
-        /* --- HLAVIČKA (Upravená výška) --- */
+        /* --- HLAVIČKA (Výška 70px) --- */
         header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         
-        /* ZDE BYLA ZMĚNA - výška snížena z 90px na 70px */
         .header-content { display: flex; justify-content: space-between; align-items: center; height: 70px; }
         
         .logo { 
-            font-size: 1.8rem; /* Základní velikost pro PC */
+            font-size: 1.8rem; 
             font-weight: 800; 
             color: var(--primary-color); 
             text-transform: uppercase; 
@@ -65,28 +64,20 @@
         /* --- HERO SEKCE S VIDEEM --- */
         .hero-video-container {
             position: relative;
-            height: 75vh; /* Výška sekce */
+            height: 75vh; 
             overflow: hidden;
             display: flex;
             align-items: center;
         }
 
-        /* Styl pro video na pozadí */
         .back-video {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -1; /* Video musí být pod obsahem */
-            object-fit: cover; /* Aby video pokrylo celou plochu bez deformace */
+            position: absolute; right: 0; bottom: 0;
+            min-width: 100%; min-height: 100%; width: auto; height: auto;
+            z-index: -1; object-fit: cover;
         }
 
         .hero-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            /* Tmavší překryv, aby byl text na videu čitelný */
             background: rgba(0, 30, 60, 0.5); 
             display: flex; align-items: center;
         }
@@ -96,45 +87,21 @@
         .hero .btn { border-color: var(--white); color: var(--white); }
         .hero .btn:hover { background: var(--white); color: var(--primary-color); }
 
-        /* --- NOVÝ PRUH SE STATISTIKAMI (Counter Bar) --- */
+        /* --- PRUH SE STATISTIKAMI --- */
         .counter-bar {
-            background-color: var(--primary-color); /* Tmavě modré pozadí */
+            background-color: var(--primary-color);
             color: var(--white);
-            padding: 50px 0; /* Výška pruhu */
+            padding: 50px 0;
             position: relative;
             z-index: 10;
         }
 
-        .counter-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 sloupce vedle sebe */
-            gap: 30px;
-            text-align: center;
-        }
-
-        .counter-item i {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--hover-color); /* Světle modrá ikona */
-        }
-
-        .counter-item h3 {
-            font-size: 2.2rem;
-            font-weight: 800;
-            margin-bottom: 5px;
-            line-height: 1;
-        }
-
-        .counter-item p {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            opacity: 0.9;
-        }
+        .counter-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+        .counter-item i { font-size: 2.5rem; margin-bottom: 15px; color: var(--hover-color); }
+        .counter-item h3 { font-size: 2.2rem; font-weight: 800; margin-bottom: 5px; line-height: 1; }
+        .counter-item p { font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; opacity: 0.9; }
 
         /* --- OSTATNÍ SEKCE --- */
-        /* Upraveno: about-grid je nyní jen text přes celou šířku, protože statistiky jsou jinde */
         .about-grid { display: block; text-align: center; max-width: 800px; margin: 0 auto; }
         .about-text p { margin-bottom: 20px; font-size: 1.1rem; }
         
@@ -143,6 +110,13 @@
         .service-card { background: var(--white); padding: 50px 40px; text-align: center; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: var(--transition); }
         .service-card:hover { transform: translateY(-10px); }
         .service-card .icon { font-size: 3.5rem; color: var(--hover-color); margin-bottom: 25px; }
+        
+        /* Styl pro sekci Technologie */
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .tech-item { text-align: center; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
+        .tech-item i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
+        .tech-item h4 { font-size: 1.2rem; margin-bottom: 10px; }
+
         .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
         .info-item { display: flex; align-items: center; margin-bottom: 30px; }
         .info-item i { width: 50px; height: 50px; background: var(--primary-color); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; }
@@ -153,22 +127,16 @@
 
         /* Mobilní úpravy */
         @media (max-width: 992px) {
-             /* Na tabletu 2x2 */
             .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
         }
 
         @media (max-width: 768px) {
-            /* ZMENŠENÍ LOGA PRO MOBILY */
             .logo { font-size: 1.3rem; }
-
-            /* Posunutí mobilního menu o něco výše, aby odpovídalo nové výšce hlavičky (70px) */
             .nav-links { display: none; position: absolute; top: 70px; right: 0; width: 100%; background: #fff; flex-direction: column; text-align: center; padding: 20px 0; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
-            
             .hamburger { display: block; font-size: 1.8rem; cursor: pointer; color: var(--primary-color); }
             #menu-toggle:checked ~ .nav-links { display: flex; }
             .contact-wrapper { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.5rem; }
-            /* Na mobilu statistiky pod sebou */
             .counter-grid { grid-template-columns: 1fr; gap: 40px; }
         }
     </style>
@@ -182,9 +150,9 @@
                 <input type="checkbox" id="menu-toggle">
                 <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
                 <ul class="nav-links">
-                    <li><a href="#home">Úvod</a></li>
-                    <li><a href="#about">O nás</a></li>
                     <li><a href="#services">Služby</a></li>
+                    <li><a href="#technology">Technologie</a></li>
+                    <li><a href="#about">O nás</a></li>
                     <li><a href="#contact">Kontakt</a></li>
                 </ul>
             </nav>
@@ -233,19 +201,7 @@
         </div>
     </section>
 
-    <section id="about" class="section-padding bg-light">
-        <div class="container">
-            <h2 class="section-title">Výrobu knih máme přečtenou</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>Více než třicet let jsme stabilním partnerem velkých, středních i malých nakladatelů knih na českém trhu. Dejte nám data a my vyrobíme knihu podle vašich představ a za férovou cenu.</p>
-                    <p>Jsme firma s dlouhou tradicí, rodinným prostředím a českým vlastníkem. Moderní technologie a řemeslnou zručnost našich lidí dáváme do služeb nakladatelům.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="section-padding">
+    <section id="services" class="section-padding bg-light">
         <div class="container">
             <h2 class="section-title">Naše služby</h2>
             <div class="services-grid">
@@ -268,9 +224,49 @@
         </div>
     </section>
 
-    <section id="contact" class="section-padding bg-light">
+    <section id="technology" class="section-padding">
         <div class="container">
-            <h2 class="section-title">Kontaktujte nás</h2>
+            <h2 class="section-title">Technologie</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Disponujeme špičkovým strojovým vybavením, které nám umožňuje realizovat i ty nejnáročnější zakázky v nejvyšší kvalitě a krátkých termínech.</p>
+                </div>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fas fa-cogs"></i>
+                        <h4>Heidelberg Speedmaster</h4>
+                        <p>Špičkový ofsetový tisk</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-cut"></i>
+                        <h4>Řezací centra</h4>
+                        <p>Přesné formátování papíru</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-layer-group"></i>
+                        <h4>Linky pro vazbu V2/V8</h4>
+                        <p>Kompletní knihařské zpracování</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">O nás</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Více než třicet let jsme stabilním partnerem velkých, středních i malých nakladatelů knih na českém trhu. Dejte nám data a my vyrobíme knihu podle vašich představ a za férovou cenu.</p>
+                    <p>Jsme firma s dlouhou tradicí, rodinným prostředím a českým vlastníkem. Moderní technologie a řemeslnou zručnost našich lidí dáváme do služeb nakladatelům.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Kontakt</h2>
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <div class="info-item">
