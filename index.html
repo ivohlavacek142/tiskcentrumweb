@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiskárna & Výroba knih | Moje Firma</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Základní nastavení */
+        :root {
+            --primary-color: #003366; /* Tmavší modrá podle vzoru */
+            --primary-light: #0055a5; /* Světlejší odstín pro gradient */
+            --hover-color: #3498db;   /* Světle modrá pro hover efekty */
+            --secondary-color: #f9f9f9;
+            --text-color: #333;
+            --white: #fff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px; /* Rozšíření kontejneru */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            position: relative;
+            font-weight: 700;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--hover-color);
+            margin: 15px auto 0;
+        }
+
+        /* Tlačítko - styl podle vzoru */
+        .btn {
+            display: inline-block;
+            padding: 12px 35px;
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 4px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Hlavička */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--primary-color);
+            transition: var(--transition);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+
+        .nav-links a:hover {
+            color: var(--hover-color);
+        }
+
+        /* Mobilní menu - skryté checkboxy */
+        #menu-toggle, .hamburger {
+            display: none;
+        }
+
+        /* Hero Sekce */
+        .hero {
+            height: 65vh;
+            /* Použití gradientu místo obrázku */
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Jemnější překryv */
+            background: rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            color: var(--white);
+            text-align: left; /* Zarovnání vlevo */
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+        
+        /* Speciální styl tlačítka v hero sekci */
+        .hero .btn {
+            border-color: var(--white);
+            color: var(--white);
+        }
+        
+        .hero .btn:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* O nás */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr; /* Větší prostor pro text */
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .about-stats {
+            display: flex;
+            flex-direction: column; /* Statistiky pod sebou */
+            gap: 25px;
+        }
+
+        /* Styl boxů se statistikami podle vzoru */
+        .stat-box {
+            background: var(--primary-color);
+            padding: 30px;
+            text-align: center;
+            border-radius: 6px;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .stat-box:hover {
+            background: var(--primary-light);
+        }
+
+        .stat-box i {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+        
+        .stat-box h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        .stat-box p {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Služby */
+        .bg-light {
+            background: var(--secondary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 50px 40px;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card .icon {
+            font-size: 3.5rem;
+            color: var(--hover-color);
+            margin-bottom: 25px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Kontakt */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .info-item i {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form input, 
+        .contact-form textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            background: var(--secondary-color);
+        }
+        
+        .contact-form .btn {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+        }
+        
+        .contact-form .btn:hover {
+            background: var(--primary-light);
+        }
+
+        /* Patička */
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsivita (Mobilní zobrazení) */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-stats {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .stat-box {
+                flex: 1 1 40%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 90px;
+                right: 0;
+                width: 100%;
+                background: var(--white);
+                text-align: center;
+                padding: 30px 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                gap: 20px;
+            }
+
+            .hamburger {
+                display: block;
+                font-size: 1.8rem;
+                cursor: pointer;
+                color: var(--primary-color);
+            }
+
+            #menu-toggle:checked ~ .nav-links {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-box {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">MOJE TISKÁRNA</a>
+            <nav>
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
+                <ul class="nav-links">
+                    <li><a href="#home">Úvod</a></li>
+                    <li><a href="#about">O nás</a></li>
+                    <li><a href="#services">Služby</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-overlay">
+            <div class="container hero-content">
+                <h1>Knihy, jak mají být</h1>
+                <p>Jen tištěná kniha je knihou, jak má být. Pro naše zákazníky vyrábíme knihy všech druhů vazeb.</p>
+                <a href="#contact" class="btn">Poptávka</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Výrobu knih máme přečtenou</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Více než třicet let jsme stabilním partnerem velkých, středních i malých nakladatelů knih na českém trhu. Dejte nám data a my vyrobíme knihu podle vašich představ a za férovou cenu.</p>
+                    <p>Jsme firma s dlouhou tradicí, rodinným prostředím a českým vlastníkem. Moderní technologie a řemeslnou zručnost našich lidí dáváme do služeb nakladatelům.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <i class="fas fa-book"></i>
+                        <h3>2,044,852+</h3>
+                        <p>Vyrobených knih ročně</p>
+                    </div>
+                    <div class="stat-box">
+                        <i class="fas fa-users"></i>
+                        <h3>814+</h3>
+                        <p>Zákazníků ročně</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Naše služby</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-laptop-code icon"></i>
+                    <h3>Předtisková příprava</h3>
+                    <p>Kontrola dat, osvit desek a příprava pro bezchybný tisk. Rozumíme složitosti výroby knihy.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-print icon"></i>
+                    <h3>Ofsetový tisk</h3>
+                    <p>Kvalitní plnobarevný i černobílý tisk na moderních strojích. Poradíme vám s výběrem papíru.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-book-open icon"></i>
+                    <h3>Knihařské zpracování</h3>
+                    <p>Vazby V1, V2, V4, V8 a kompletní dokončovací práce. Vyrobíme vám všechny druhy vazeb.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Kontaktujte nás</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Průmyslová 123, 100 00 Praha</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+420 123 456 789</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@mojetiskarna.cz</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Vaše jméno" required>
+                    <input type="email" placeholder="Váš e-mail" required>
+                    <textarea placeholder="Vaše zpráva" rows="5" required></textarea>
+                    <button type="submit" class="btn">Odeslat zprávu</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Moje Tiskárna s.r.o. | Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
