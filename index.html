@@ -113,8 +113,9 @@
         .counter-item p { font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; opacity: 0.9; }
 
         /* --- OSTATNÍ SEKCE --- */
-        .about-grid { display: block; text-align: center; max-width: 900px; margin: 0 auto; }
-        .about-text p { margin-bottom: 20px; font-size: 1.1rem; }
+        .about-grid { display: block; text-align: center; max-width: 1000px; margin: 0 auto; }
+        /* Zarovnání textu do bloku pro lepší vzhled dlouhého textu */
+        .about-text p { margin-bottom: 20px; font-size: 1.1rem; text-align: justify; }
         
         .bg-light { background: var(--secondary-color); }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
@@ -139,6 +140,7 @@
         /* Mobilní úpravy */
         @media (max-width: 992px) {
             .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+            .about-text p { text-align: left; } /* Na mobilu zarovnání vlevo */
         }
 
         @media (max-width: 768px) {
@@ -206,7 +208,7 @@
                 <div class="counter-item">
                     <i class="fas fa-calendar-alt"></i>
                     <h3>25+ Let</h3>
-                    <p>Tradice na trhu (od 2001)</p>
+                    <p>Tradice na trhu</p>
                 </div>
             </div>
         </div>
@@ -268,8 +270,10 @@
             <h2 class="section-title">O společnosti</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>Společnost TISK CENTRUM s.r.o. působí na trhu polygrafie již od roku 2001. Za tu dobu jsme se vypracovali mezi přední tiskárny v České republice.</p>
-                    <p>V roce 2021 jsme rozšířili náš výrobní areál v Moravanech u Brna na 16 000 m². Sázíme na ekologii a inovace – proto jsme jako první ve střední a východní Evropě instalovali technologii Heidelberg LED UV.</p>
+                    <p>Společnost TISK CENTRUM s.r.o. vznikla v roce 2001 s vizí vytvořit moderní polygrafický podnik, patřící ke špičce v Evropě a tak zabezpečit trvalou prosperitu a spokojenost zákazníků. Velký důraz klademe na kvalitní, moderní technologie, které zajistí rychlý a přesný tisk při dodržení nejvyššího standardu. Ty je možné dodržet jen při profesionálně odvedené práci zaměstnanců a neustálých investicích do moderních výrobních a informačních technologií. Velkou pozornost věnujeme zvyšování vzdělání a odborné úrovně zaměstnanců, zlepšování pracovního prostředí a ekologii.</p>
+                    <p>Naše společnost má v nově zabudovaném výrobním areálu uzavřený výrobním cyklus od grafické přípravy přes kvalitní tisk, náročné knihařské zpracování až po zušlechťovací a dokončovací technologie UV a hot press.</p>
+                    <p>Výrobní proces není přerušován a probíhá v non-stop režimu, který nabízí nejkratší čas zpracování při vysoké produkci, což oceňují především vydavatelé periodik. V neposlední řadě poskytujeme zákazníkům poradenství v oblasti polygrafie, potiskovaných materiálů a distribučního servisu.</p>
+                    <p>Věříme, že i Vás naše obchodní strategie a kvalitně zpracované výrobky osloví.</p>
                 </div>
             </div>
         </div>
