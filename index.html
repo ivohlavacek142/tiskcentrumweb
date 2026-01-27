@@ -96,4 +96,226 @@
         }
         .hero-content { color: var(--white); text-align: left; width: 100%; z-index: 1; }
         .hero h1 { font-size: 4rem; margin-bottom: 25px; font-weight: 800; line-height: 1.2; }
-        .hero p { font
+        .hero p { font-size: 1.3rem; margin-bottom: 40px; max-width: 700px; }
+        
+        /* --- PRUH SE STATISTIKAMI --- */
+        .counter-bar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 50px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .counter-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+        .counter-item i { font-size: 2.5rem; margin-bottom: 15px; color: var(--hover-color); }
+        .counter-item h3 { font-size: 2.2rem; font-weight: 800; margin-bottom: 5px; line-height: 1; }
+        .counter-item p { font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; opacity: 0.9; }
+
+        /* --- OSTATNÍ SEKCE --- */
+        .about-grid { display: block; text-align: center; max-width: 1000px; margin: 0 auto; }
+        /* Zarovnání textu pro lepší čitelnost delších odstavců */
+        .about-text p { margin-bottom: 20px; font-size: 1.1rem; text-align: justify; }
+        
+        .bg-light { background: var(--secondary-color); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .service-card { background: var(--white); padding: 50px 40px; text-align: center; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: var(--transition); }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card .icon { font-size: 3.5rem; color: var(--hover-color); margin-bottom: 25px; }
+        
+        /* Styl pro sekci Výroba */
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .tech-item { text-align: center; padding: 20px; border: 1px solid #eee; border-radius: 8px; background: #fff; }
+        .tech-item i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
+        .tech-item h4 { font-size: 1.2rem; margin-bottom: 10px; font-weight: 700; color: var(--primary-color); }
+
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .info-item { display: flex; align-items: center; margin-bottom: 30px; }
+        .info-item i { width: 50px; height: 50px; background: var(--primary-color); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; }
+        .contact-form { display: flex; flex-direction: column; gap: 20px; }
+        .contact-form input, .contact-form textarea { padding: 15px; border: 1px solid #ddd; border-radius: 4px; background: var(--secondary-color); }
+        .contact-form .btn { background: var(--primary-color); color: var(--white); border: none; }
+        footer { background: var(--primary-color); color: #fff; padding: 30px 0; text-align: center; }
+
+        /* Mobilní úpravy */
+        @media (max-width: 992px) {
+            .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+            .about-text p { text-align: left; }
+        }
+
+        @media (max-width: 768px) {
+            .logo { font-size: 1.3rem; }
+            .nav-links { display: none; position: absolute; top: 70px; right: 0; width: 100%; background: #fff; flex-direction: column; text-align: center; padding: 20px 0; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+            .hamburger { display: block; font-size: 1.8rem; cursor: pointer; color: var(--primary-color); }
+            #menu-toggle:checked ~ .nav-links { display: flex; }
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            .counter-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">TISKCENTRUM</a>
+            <nav>
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
+                <ul class="nav-links">
+                    <li><a href="#services">Služby</a></li>
+                    <li><a href="#production">Výroba</a></li> <li><a href="#about">O nás</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero-video-container">
+        <video autoplay muted loop playsinline class="back-video">
+           <source src="video.mp4" type="video/mp4">
+            Váš prohlížeč nepodporuje video tag.
+        </video>
+
+        <div class="hero-overlay">
+            <div class="container hero-content">
+                <h1>Výroba knih v ekologické generaci</h1>
+                <p>Jsme moderní tiskárna s revoluční technologií LED UV. Jako první ve střední a východní Evropě nabízíme tisk v té nejvyšší kvalitě s důrazem na ekologii.</p>
+                <a href="#contact" class="btn">Poptávka</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="counter-bar">
+        <div class="container">
+            <div class="counter-grid">
+                <div class="counter-item">
+                    <i class="fas fa-industry"></i>
+                    <h3>16 000 m²</h3>
+                    <p>Výrobní plochy</p>
+                </div>
+                <div class="counter-item">
+                    <i class="fas fa-print"></i>
+                    <h3>Miliony</h3>
+                    <p>Knih vyrobených ročně</p>
+                </div>
+                <div class="counter-item">
+                    <i class="fas fa-certificate"></i>
+                    <h3>LED UV</h3>
+                    <p>První v ČR a SR</p>
+                </div>
+                <div class="counter-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>25+ Let</h3>
+                    <p>Tradice na trhu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Naše služby</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-laptop-code icon"></i>
+                    <h3>Předtisková příprava</h3>
+                    <p>Kompletní DTP studio, kontrola tiskových dat a osvit desek CTP pro bezchybný výsledek.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-print icon"></i>
+                    <h3>Ofsetový tisk</h3>
+                    <p>Tisk na strojích Heidelberg. Specializujeme se na LED UV tisk, který okamžitě schne a umožňuje tisk na širokou škálu materiálů.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-book-open icon"></i>
+                    <h3>Dokončující zpracování</h3>
+                    <p>Vazby V1, V2, V4, V8 na vlastních linkách. Nabízíme zušlechťování, laminaci a logistiku.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="production" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Výroba</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Tiskové stroje Heidelberg vždy patřily a patří k absolutní špičce na světových trzích a to zejména díky dokonalému dílenskému zpracování, spolehlivosti a technickým inovacím. Dále jsou specifické vysokým stupněm automatizace pro dané potřeby tiskové produkce.</p>
+                    <p>Důležitým pomocníkem je unikátní systém Printec Workflow, který zvládá řešit složité procesy polygrafického provozu jednoduchým způsobem. Od kalkulace, přes plánování výroby, tisk až po expedici. Systém jednoduše zpracuje celou technologii výroby a elektronicky komunikuje se všemi technologiemi a stroji, kterým předává důležité informace a parametry zadané zákazníkem v tiskových datech.</p>
+                    <p>Vysokou kapacitu produkce zajišťují stroje s maximálními formáty papíru B1 (750 × 1050 mm), síly až do 1 mm, při maximálním průjezdu 18 000 archů za hodinu.</p>
+                </div>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fas fa-cogs"></i>
+                        <h4>Heidelberg XL 106-8 LED UV</h4>
+                        <p>Vlajková loď naší tiskárny pro špičkový ekologický tisk.</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-book"></i>
+                        <h4>Linka Kolbus BF 513</h4>
+                        <p>Profesionální linka pro výrobu tuhé vazby V8.</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-layer-group"></i>
+                        <h4>Aster Evo</h4>
+                        <p>Automat pro niťové šití knižních bloků.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">O společnosti</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Společnost TISK CENTRUM s.r.o. vznikla v roce 2001 s vizí vytvořit moderní polygrafický podnik, patřící ke špičce v Evropě a tak zabezpečit trvalou prosperitu a spokojenost zákazníků. Velký důraz klademe na kvalitní, moderní technologie, které zajistí rychlý a přesný tisk při dodržení nejvyššího standardu.</p>
+                    <p>Ty je možné dodržet jen při profesionálně odvedené práci zaměstnanců a neustálých investicích do moderních výrobních a informačních technologií. Velkou pozornost věnujeme zvyšování vzdělání a odborné úrovně zaměstnanců, zlepšování pracovního prostředí a ekologii.</p>
+                    <p>Naše společnost má v nově zabudovaném výrobním areálu uzavřený výrobním cyklus od grafické přípravy přes kvalitní tisk, náročné knihařské zpracování až po zušlechťovací a dokončovací technologie UV a hot press.</p>
+                    <p>Výrobní proces není přerušován a probíhá v non-stop režimu, který nabízí nejkratší čas zpracování při vysoké produkci, což oceňují především vydavatelé periodik. V neposlední řadě poskytujeme zákazníkům poradenství v oblasti polygrafie, potiskovaných materiálů a distribučního servisu. Věříme, že i Vás naše obchodní strategie a kvalitně zpracované výrobky osloví.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Kontakt</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Výroba a sídlo:</strong>
+                            <p>Modřická 645/62<br>664 48 Moravany u Brna</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+420 545 243 565</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@tiskcentrum.cz</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Vaše jméno" required>
+                    <input type="email" placeholder="Váš e-mail" required>
+                    <textarea placeholder="Vaše zpráva" rows="5" required></textarea>
+                    <button type="submit" class="btn">Odeslat zprávu</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 TISK CENTRUM s.r.o. | Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
