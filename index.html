@@ -118,10 +118,18 @@
         
         .bg-light { background: var(--secondary-color); }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        
         .service-card { background: var(--white); padding: 50px 40px; text-align: center; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: var(--transition); }
         .service-card:hover { transform: translateY(-10px); }
         .service-card .icon { font-size: 3.5rem; color: var(--hover-color); margin-bottom: 25px; }
         
+        /* Nový styl pro kartu s obrázkem */
+        .service-img {
+            background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            padding: 0;
+            min-height: 300px; /* Zajišťuje výšku, aby byl obrázek vidět */
+        }
+
         /* Styl pro sekci Výroba */
         .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
         .tech-item { text-align: center; padding: 20px; border: 1px solid #eee; border-radius: 8px; background: #fff; }
@@ -237,6 +245,8 @@
                     <h3>Logistika 24/7</h3>
                     <p>Plně respektuje potřeby jednotlivých obchodních partnerů v reálné obslužnosti až do požadavku na 7 dní v týdnu a 24 hodin denně.</p>
                 </div>
+                <div class="service-card service-img">
+                    </div>
             </div>
         </div>
     </section>
@@ -286,51 +296,4 @@
             <h2 class="section-title">O společnosti</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>Společnost TISK CENTRUM s.r.o. vznikla v roce 2001 s vizí vytvořit moderní polygrafický podnik, patřící ke špičce v Evropě a tak zabezpečit trvalou prosperitu a spokojenost zákazníků. Velký důraz klademe na kvalitní, moderní technologie, které zajistí rychlý a přesný tisk při dodržení nejvyššího standardu.</p>
-                    <p>Ty je možné dodržet jen při profesionálně odvedené práci zaměstnanců a neustálých investicích do moderních výrobních a informačních technologií. Velkou pozornost věnujeme zvyšování vzdělání a odborné úrovně zaměstnanců, zlepšování pracovního prostředí a ekologii.</p>
-                    <p>Naše společnost má v nově zabudovaném výrobním areálu uzavřený výrobním cyklus od grafické přípravy přes kvalitní tisk, náročné knihařské zpracování až po zušlechťovací a dokončovací technologie UV a hot press.</p>
-                    <p>Výrobní proces není přerušován a probíhá v non-stop režimu, který nabízí nejkratší čas zpracování při vysoké produkci, což oceňují především vydavatelé periodik. V neposlední řadě poskytujeme zákazníkům poradenství v oblasti polygrafie, potiskovaných materiálů a distribučního servisu. Věříme, že i Vás naše obchodní strategie a kvalitně zpracované výrobky osloví.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Kontakt</h2>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <strong>Výroba a sídlo:</strong>
-                            <p>Modřická 645/62<br>664 48 Moravany u Brna</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+420 545 243 565</p>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>info@tiskcentrum.cz</p>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Vaše jméno" required>
-                    <input type="email" placeholder="Váš e-mail" required>
-                    <textarea placeholder="Vaše zpráva" rows="5" required></textarea>
-                    <button type="submit" class="btn">Odeslat zprávu</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container footer-content">
-            <p>&copy; 2026 TISK CENTRUM s.r.o. | Všechna práva vyhrazena.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+                    <p>Společnost TISK CENTRUM s.r.o. vznikla v roce 2001 s vizí vytvořit moderní polygrafický podnik, patřící ke špičce v Evropě a tak zabezpečit trvalou prosperitu a spokojenost zákazníků. Velký důraz klademe na kvalitní, moderní technologie, které zajistí rychlý a přesný tisk při dodrž
