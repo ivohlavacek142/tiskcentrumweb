@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Předtisková příprava | TISKCENTRUM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- ZÁKLADNÍ NASTAVENÍ (Stejné jako index.html) --- */
+        :root {
+            --primary-color: #003366; 
+            --primary-light: #0055a5;
+            --hover-color: #3498db;   
+            --secondary-color: #f9f9f9;
+            --text-color: #333;
+            --white: #fff;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { line-height: 1.6; color: var(--text-color); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 80px 0; }
+        
+        /* --- HLAVIČKA --- */
+        header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .header-content { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-size: 1.8rem; font-weight: 800; color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; }
+
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { font-weight: 600; color: var(--primary-color); transition: var(--transition); font-size: 0.95rem; text-transform: uppercase; }
+        .nav-links a:hover { color: var(--hover-color); }
+        
+        #menu-toggle, .hamburger { display: none; }
+
+        /* --- SUBPAGE HERO (Banner podstránky) --- */
+        .subpage-hero {
+            height: 40vh;
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 50px;
+        }
+
+        .subpage-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+        }
+
+        /* --- TEXTOVÝ OBSAH --- */
+        .about-text p { margin-bottom: 20px; font-size: 1.1rem; text-align: justify; }
+        
+        /* Boxy s ikonami */
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
+        .tech-item { text-align: center; padding: 30px; border: 1px solid #eee; border-radius: 8px; background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .tech-item i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
+        .tech-item h4 { font-size: 1.2rem; margin-bottom: 10px; font-weight: 700; color: var(--primary-color); }
+
+        /* --- PATIČKA --- */
+        footer { background: var(--primary-color); color: #fff; padding: 30px 0; text-align: center; margin-top: 80px; }
+
+        @media (max-width: 768px) {
+            .logo { font-size: 1.3rem; }
+            .nav-links { display: none; position: absolute; top: 70px; right: 0; width: 100%; background: #fff; flex-direction: column; text-align: center; padding: 20px 0; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+            .hamburger { display: block; font-size: 1.8rem; cursor: pointer; color: var(--primary-color); }
+            #menu-toggle:checked ~ .nav-links { display: flex; }
+            .subpage-hero h1 { font-size: 2.5rem; }
+            .about-text p { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">TISKCENTRUM</a>
+            <nav>
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
+                <ul class="nav-links">
+                    <li><a href="index.html#services">Služby</a></li>
+                    <li><a href="index.html#production">Výroba</a></li>
+                    <li><a href="index.html#about">O nás</a></li>
+                    <li><a href="index.html#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="subpage-hero">
+        <div class="container">
+            <h1>Předtisková příprava</h1>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="about-text">
+            <p>Základem kvalitního tisku je bezchybná předtisková příprava. Naše DTP studio je vybaveno nejmodernějšími hardwarovými i softwarovými nástroji pro zpracování vašich dat. Přijímáme podklady ve všech standardních formátech a provádíme jejich důkladnou kontrolu (preflight) před samotným odesláním do tisku.</p>
+            
+            <p>Využíváme pokročilý systém <strong>Printec Workflow</strong>, který automatizuje procesy od příjmu dat až po osvit tiskových desek. Díky tomu eliminujeme lidské chyby a zaručujeme maximální přesnost barevnosti i soutisku. Součástí našich služeb je také výroba digitálních nátisků pro kontrolu barevnosti před tiskem.</p>
+            
+            <p>Disponujeme výkonnými CTP (Computer-to-Plate) jednotkami pro osvit tiskových desek, které pracují s vysokým rozlišením a zajišťují tak ostrost každého detailu, ať už jde o jemnou grafiku nebo drobný text.</p>
+        </div>
+
+        <div class="tech-grid">
+            <div class="tech-item">
+                <i class="fas fa-desktop"></i>
+                <h4>DTP Studio</h4>
+                <p>Profesionální kontrola a úprava tiskových dat.</p>
+            </div>
+            <div class="tech-item">
+                <i class="fas fa-file-contract"></i>
+                <h4>Certifikovaný nátisk</h4>
+                <p>Digitální nátisky pro věrnou simulaci barevnosti.</p>
+            </div>
+            <div class="tech-item">
+                <i class="fas fa-layer-group"></i>
+                <h4>CTP Osvit</h4>
+                <p>Přímý osvit tiskových desek s vysokým rozlišením.</p>
+            </div>
+            <div class="tech-item">
+                <i class="fas fa-network-wired"></i>
+                <h4>Printec Workflow</h4>
+                <p>Automatizované řízení zakázky od přijetí dat po tisk.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 TISK CENTRUM s.r.o. | Všechna práva vyhrazena.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
