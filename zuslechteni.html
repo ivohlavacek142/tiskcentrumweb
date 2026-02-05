@@ -5,39 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zušlechťovací technologie | TISKCENTRUM</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        /* Znovu - stejné CSS */
-        :root { --primary-color: #003366; --primary-light: #0055a5; --hover-color: #3498db; --secondary-color: #f9f9f9; --text-color: #333; --white: #fff; --transition: all 0.3s ease; }
+        /* --- ZÁKLADNÍ NASTAVENÍ --- */
+        :root {
+            --primary-color: #003366; 
+            --primary-light: #0055a5;
+            --hover-color: #3498db;   
+            --secondary-color: #f9f9f9;
+            --text-color: #333;
+            --white: #fff;
+            --transition: all 0.3s ease;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { line-height: 1.6; color: var(--text-color); }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
+        
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 80px 0; }
+        
+        /* --- HLAVIČKA --- */
         header { background: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .header-content { display: flex; justify-content: space-between; align-items: center; height: 70px; }
         .logo { font-size: 1.8rem; font-weight: 800; color: var(--primary-color); text-transform: uppercase; letter-spacing: 2px; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { font-weight: 600; color: var(--primary-color); transition: var(--transition); font-size: 0.95rem; text-transform: uppercase; }
-        .nav-links a:hover { color: var(--hover-color); }
+
+        /* NAVIGACE */
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links > li > a { font-weight: 600; color: var(--primary-color); transition: var(--transition); font-size: 0.95rem; text-transform: uppercase; padding: 10px 0; }
+        .nav-links > li > a:hover { color: var(--hover-color); }
+        
+        /* --- DROPDOWN MENU (VYSOUVACÍ NABÍDKA) --- */
+        .dropdown { position: relative; }
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background-color: var(--white); box-shadow: 0 5px 15px rgba(0,0,0,0.1); min-width: 280px; border-top: 3px solid var(--hover-color); z-index: 9999; }
+        .dropdown:hover .dropdown-menu { display: block; }
+        .dropdown-menu li { width: 100%; }
+        .dropdown-menu li a { display: block; padding: 12px 20px; color: var(--text-color); font-weight: 500; font-size: 0.9rem; border-bottom: 1px solid #eee; text-transform: none; }
+        .dropdown-menu li a:hover { background-color: var(--secondary-color); color: var(--primary-color); padding-left: 25px; }
+
         #menu-toggle, .hamburger { display: none; }
-        .subpage-hero { height: 40vh; background: linear-gradient(45deg, var(--primary-color), var(--primary-light)); display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); margin-bottom: 50px; }
-        .subpage-hero h1 { font-size: 3.5rem; font-weight: 800; }
+
+        /* --- SUBPAGE HERO --- */
+        .subpage-hero {
+            height: 40vh;
+            background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 50px;
+        }
+
+        .subpage-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+        }
+
+        /* --- TEXTOVÝ OBSAH --- */
         .about-text p { margin-bottom: 20px; font-size: 1.1rem; text-align: justify; }
+        
+        /* Boxy s ikonami */
         .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
         .tech-item { text-align: center; padding: 30px; border: 1px solid #eee; border-radius: 8px; background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .tech-item i { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
         .tech-item h4 { font-size: 1.2rem; margin-bottom: 10px; font-weight: 700; color: var(--primary-color); }
+
+        /* --- PATIČKA --- */
         footer { background: var(--primary-color); color: #fff; padding: 30px 0; text-align: center; margin-top: 80px; }
+
+        /* MOBILNÍ VERZE */
         @media (max-width: 768px) {
+            .logo { font-size: 1.3rem; }
             .nav-links { display: none; position: absolute; top: 70px; right: 0; width: 100%; background: #fff; flex-direction: column; text-align: center; padding: 20px 0; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
             .hamburger { display: block; font-size: 1.8rem; cursor: pointer; color: var(--primary-color); }
             #menu-toggle:checked ~ .nav-links { display: flex; }
+            
+            /* Mobilní dropdown */
+            .dropdown-menu { position: static; display: block; box-shadow: none; border-top: none; background-color: #f9f9f9; padding-left: 0; }
+            .dropdown-menu li a { padding: 10px; font-size: 0.85rem; border-bottom: 1px solid #e0e0e0; }
+
             .subpage-hero h1 { font-size: 2.5rem; }
             .about-text p { text-align: left; }
         }
     </style>
 </head>
 <body>
+
     <header>
         <div class="container header-content">
             <a href="index.html" class="logo">TISKCENTRUM</a>
@@ -45,8 +100,18 @@
                 <input type="checkbox" id="menu-toggle">
                 <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
                 <ul class="nav-links">
-                    <li><a href="index.html#services" class="active">Služby</a></li>
-                    <li><a href="index.html#production">Výroba</a></li>
+                    <li><a href="index.html#services">Služby</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="index.html#production">Výroba <i class="fas fa-caret-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tisk.html">Moderní tiskové stroje</a></li>
+                            <li><a href="predtisk.html">Předtisková příprava</a></li>
+                            <li><a href="dokoncujici.html">Dokončující zpracování tiskovin</a></li>
+                            <li><a href="zuslechteni.html">Zušlechťovací technologie</a></li>
+                        </ul>
+                    </li>
+
                     <li><a href="index.html#about">O nás</a></li>
                     <li><a href="index.html#contact">Kontakt</a></li>
                 </ul>
@@ -63,7 +128,9 @@
     <section class="container">
         <div class="about-text">
             <p>Zušlechtění tiskovin je to, co prodává. Dodává obálkám knih a katalogům luxusní vzhled a chrání je před poškozením. Nabízíme širokou paletu povrchových úprav, které z vaší tiskoviny udělají jedinečný produkt.</p>
+            
             <p>Standardem je <strong>laminace</strong> (lesklá, matná i soft-touch "sametová") a celoplošný či parciální <strong>UV lak</strong>, který zvýrazní vybrané detaily grafiky. Díky LED UV technologii dosahujeme vysokého lesku a okamžitého vytvrzení.</p>
+            
             <p>Dále nabízíme ražbu (slepo-ražbu nebo horkou ražbu fólií - zlatá, stříbrná) a různé druhy výseků. Tyto technologie výrazně zvyšují atraktivitu výsledného produktu a jeho vnímanou hodnotu.</p>
         </div>
 
@@ -96,5 +163,6 @@
             <p>&copy; 2026 TISK CENTRUM s.r.o. | Všechna práva vyhrazena.</p>
         </div>
     </footer>
+
 </body>
 </html>
